@@ -1,0 +1,38 @@
+def encrypt(text,shift_val):
+    string=text.split()
+    string2=''
+    for w in string:    #Iteration for each word in the text
+        for x in w:     #Iteration for each letter in the word
+            if not x.isdigit():
+                #x=x.lower()
+                y=ord(x)+shift_val
+                if x.islower():
+                    if y>ord('z'):
+                        ext=y-ord('z')
+                        y=ord('a')+ext-1
+                else:
+                    if y>ord('Z'):
+                        ext=y-ord('Z')
+                        y=ord('A')+ext-1
+                string2+=chr(y)
+            else:
+                string2+=x
+        abc=" "
+        string2+=abc
+    print(string2)
+    
+#Enter text to be encrypted    
+tex=input("enter text to be encrypted: ")
+
+#Loop to iteraae through each letter of the text
+while True:
+    shift_value=int(input("enter shift value of the letter between 1-25: " ))       #Encryption key initialization 
+    if shift_value>25:
+        continue
+    elif shift_value<1:
+        continue
+    else:
+        break
+    
+#Function call to for text encryption    
+encrypt(tex,shift_value)
