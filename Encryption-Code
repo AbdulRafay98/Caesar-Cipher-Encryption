@@ -26,8 +26,8 @@ tex=input("enter text to be encrypted: ")
 
 #Loop to iteraae through each letter of the text
 while True:
-    shift_value=int(input("enter shift value of the letter between 1-25: " ))       #Encryption key initialization 
-    if shift_value>25:
+    shift_value=int(input("enter shift value of the letter between 1-26: " ))       #Encryption key initialization 
+    if shift_value>26:
         continue
     elif shift_value<1:
         continue
